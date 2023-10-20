@@ -12,6 +12,7 @@ public:
     int licenseLimit;
     int borrowedCount;
 
+    Document();
     Document(std::string n, int i, int l);
 };
 

@@ -1,5 +1,8 @@
 #include "DocumentManager.h"
 
+Document::Document() {}
+
+
 Document::Document(std::string n, int i, int l) {
     name = n;
     id = i;
