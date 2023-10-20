@@ -30,4 +30,4 @@ public:
     void returnDocument(int docid, int patronID);
 };
 
-#endif // DOCUMENTMANAGER_H
+#endif
