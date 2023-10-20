@@ -9,8 +9,8 @@ class Document {
 public:
     std::string name;
     int id;
-    int license_limit;
-    int borrowed_count;
+    int licenseLimit;
+    int borrowedCount;
 
     Document(std::string n, int i, int l);
 };
@@ -20,7 +20,7 @@ private:
     std::unordered_map<std::string, Document> documentNames;
     std::unordered_map<int, Document> documentIDs;
     std::set<int> patrons;
-    std::unordered_map<int, std::set<int>> patron_borrowed_docs;
+    std::unordered_map<int, std::set<int>> borrowedDocs;
 
 public:
     void addDocument(std::string name, int id, int license_limit);
