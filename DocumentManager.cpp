@@ -20,9 +20,20 @@ int DocumentManager::search(std::string name) {
 }
 
 bool DocumentManager::borrowDocument(int docid, int patronID) {
+    if(patrons.find(patronID) == patrons.end() || 
+       documentIDs.find(docid) == documentIDs.end() || 
+       documentIDs[docid].borrowedCount >= documentIDs[docid].licenseLimit) {
+        return false;
+    }
 
+    documentIDs[docid].borrowedCount++;
+    borrowedDocs[patronID].insert(docid);
+    return true;
 }
 
 void DocumentManager::returnDocument(int docid, int patronID) {
-
+if(borrowedDocs[patronID].find(docid) != borrowedDocs[patronID].end()) {
+        documentIDs[docid].borrowedCount--;
+        borrowedDocs[patronID].erase(docid);
+    }
 }
