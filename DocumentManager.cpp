@@ -1,6 +1,11 @@
 #include "DocumentManager.h"
 
-Document::Document(std::string n, int i, int l) {}
+Document::Document(std::string n, int i, int l) {
+    name = n;
+    id = i;
+    licenseLimit = l;
+    borrowedCount = 0;
+}
 
 void DocumentManager::addDocument(std::string name, int id, int licenseLimit) {
     Document doc(name, id, licenseLimit);
